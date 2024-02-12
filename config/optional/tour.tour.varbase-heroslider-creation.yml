@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - varbase_heroslider
-id: media-hero-slider-creation
+id: varbase-heroslider-creation
 label: 'Varbase Heroslider Creation'
 module: varbase_heroslider
 routes:
