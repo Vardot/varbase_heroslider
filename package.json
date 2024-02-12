@@ -1,0 +1,70 @@
+{
+  "name": "varbase_heroslider",
+  "description": "Varbase  Heroslider",
+  "author": "Vardot",
+  "license": "GPL-2.0",
+  "homepage": "https://www.drupal.org/project/varbase_heroslider",
+  "private": true,
+  "engines": {
+    "yarn": ">= 1.6",
+    "node": ">= 18.0"
+  },
+  "scripts": {
+    "phpcs": "phpcs --standard=./.phpcs.xml .",
+    "phpcbf": "phpcbf --standard=./.phpcs.xml .",
+    "lint:js": "node ./node_modules/eslint/bin/eslint.js .",
+    "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --ext .yml ."
+  },
+  "keywords": [
+    "drupal",
+    "webpack",
+    "varbase",
+    "Hero Slider",
+    "Heroslider",
+    "Varbase Heroslider",
+    "frontend"
+  ],
+  "devDependencies": {
+    "dotenv-safe": "^8.2.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jquery": "^1.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-yml": "^1.2.0",
+    "glob": "^8.0.3",
+    "js-cookie": "3.0.x",
+    "jsdom": "^20.0.0",
+    "loadjs": "4.2.x",
+    "prettier": "^2.1.2",
+    "stylelint": "^15.5.0",
+    "stylelint-checkstyle-formatter": "^0.1.2",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-order": "^6.0.3",
+    "tabbable": "~6.0.0",
+    "terser": "^5.14.2",
+    "terser-webpack-plugin": "^5.3.3",
+    "underscore": "~1.13.4",
+    "expose-loader": "^3.1.0",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-middleware": "^4.1.0",
+    "webpack-merge": "^5.7.3",
+    "webpack-notifier": "^1.13.0",
+    "webpack-remove-empty-scripts": "^0.7.1",
+    "copy-webpack-plugin": "~11.0.0",
+    "clean-webpack-plugin": "^4.0.0"
+  },
+  "browserslist": [
+    "last 2 Chrome major versions",
+    "last 2 Firefox major versions",
+    "last 2 Safari major versions",
+    "last 2 Edge major versions",
+    "last 2 Opera versions",
+    "last 2 iOS major versions",
+    "last 1 ChromeAndroid version",
+    "last 1 Samsung version",
+    "Firefox ESR"
+  ]
+}

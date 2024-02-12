@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.varbase_heroslider
+label: "Varbase Heroslider"
+targetEntityType: media
+cache: true

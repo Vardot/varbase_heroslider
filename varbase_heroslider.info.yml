@@ -1,0 +1,17 @@
+name: Varbase Heroslider
+description: 'This app will populate the universal implementation of a "Hero Slider" to be used on the homepage in most cases. A rich hero slider that allows you to display video and/or image slides.'
+type: module
+package: "Varbase"
+core_version_requirement: ~10
+dependencies:
+  - varbase_media:varbase_media
+  - varbase_components:varbase_components
+install:
+  - link
+  - menu_ui
+  - entityqueue
+  - rabbit_hole
+  - field_group
+  - length_indicator
+  - advanced_text_formatter
+  - maxlength
