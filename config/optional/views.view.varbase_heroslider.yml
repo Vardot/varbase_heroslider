@@ -12,8 +12,8 @@ dependencies:
     - entityqueue
     - link
     - node
-    - slick_views
     - user
+    - views_bootstrap
 id: varbase_heroslider
 label: 'Varbase Heroslider'
 module: views
@@ -23,100 +23,12 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: some
-        options:
-          items_per_page: 0
-          offset: 0
-      style:
-        type: slick
-        options:
-          vanilla: true
-          optionset: varbase_slick
-          skin: default
-          layout: ''
-          caption:
-            field_brief: field_brief
-            field_media_single: '0'
-            title: '0'
-            field_link: '0'
-          optionset_thumbnail: ''
-          skin_thumbnail: ''
-          thumbnail_caption: ''
-          grid_header: ''
-          grid: null
-          grid_medium: 2
-          grid_small: 1
-          visible_items: 2
-          preserve_keys: true
-          image: ''
-          thumbnail: ''
-          overlay: ''
-          title: title
-          link: field_link
-          class: ''
-          id: ''
-          override: false
-          overridables:
-            arrows: '0'
-            autoplay: '0'
-            dots: '0'
-            draggable: '0'
-            infinite: '0'
-            mouseWheel: '0'
-            randomize: '0'
-            variableWidth: '0'
-          cache: 0
-          current_view_mode: varbase_heroslider
-      row:
-        type: 'ds_entity:node'
-        options:
-          relationship: none
-          view_mode: default
-          alternating_fieldset:
-            alternating: false
-            allpages: false
-            item_0: teaser
-            item_1: teaser
-            item_2: teaser
-            item_3: teaser
-            item_4: teaser
-          grouping_fieldset:
-            group: false
-            group_field: node_field_data|entityqueue_relationship
-            group_field_function: ''
-          advanced_fieldset:
-            advanced: false
+      title: 'Varbase Heroslider'
       fields:
         field_media_single:
           id: field_media_single
@@ -125,6 +37,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -180,7 +93,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -188,6 +100,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -243,7 +156,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_brief:
           id: field_brief
           table: node__field_brief
@@ -251,6 +163,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -305,7 +218,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_link:
           id: field_link
           table: node__field_link
@@ -313,6 +225,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -372,51 +285,28 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            varbase_heroslider: varbase_heroslider
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
-      sorts:
-        entityqueue_relationship:
-          id: entityqueue_relationship
-          table: node_field_data
-          field: entityqueue_relationship
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-            field_identifier: entityqueue_relationship
-          entity_type: node
-          plugin_id: entity_queue_position
-      title: 'Varbase Heroslider'
-      header: {  }
-      footer: {  }
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 0
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
       empty:
         area:
           id: area
@@ -425,15 +315,97 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: |-
-              <p> Varbase Heroslider </p>
-              <p> There are no slides right now! </p>
-              <a class="btn btn-primary hidden-anonymous visible-admin add-slider" href="[site:url]/node/add/varbase_heroslider/"> Add One Now </a>
-            format: full_html
           plugin_id: text
+          empty: true
+          content:
+            value: "<p> Varbase Heroslider </p>\r\n<p> There are no slides right now! </p>\r\n<a class=\"btn btn-primary hidden-anonymous visible-admin add-slider\" href=\"[site:url]/node/add/varbase_heroslider/\"> Add One Now </a>"
+            format: full_html
+          tokenize: false
+      sorts:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_queue_position
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: entityqueue_relationship
+          exposed: false
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            varbase_heroslider: varbase_heroslider
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: views_bootstrap_carousel
+        options:
+          grouping: {  }
+          interval: '5000'
+          keyboard: 1
+          ride: 1
+          navigation: 1
+          indicators: 1
+          pause: 1
+          use_caption: 1
+          wrap: 1
+          effect: slide
+          image: field_media_single
+          title: title
+          description: field_brief
+      row:
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: default
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+            item_2: teaser
+            item_3: teaser
+            item_4: teaser
+          grouping_fieldset:
+            group: false
+            group_field: node_field_data|entityqueue_relationship
+            group_field_function: ''
+          advanced_fieldset:
+            advanced: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
       relationships:
         entityqueue_relationship:
           id: entityqueue_relationship
@@ -442,13 +414,14 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Content queue'
-          required: true
-          limit_queue: varbase_heroslider
           entity_type: node
           plugin_id: entity_queue
-      arguments: {  }
-      display_extenders: {  }
+          required: true
+          limit_queue: varbase_heroslider
       css_class: varbase-heroslider
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -464,14 +437,16 @@ display:
         - entity_field_info
         - views_data
   varbase_heroslider:
-    display_plugin: block
     id: varbase_heroslider
     display_title: 'Varbase Heroslider'
+    display_plugin: block
     position: 1
     display_options:
-      display_extenders:
-        metatag_display_extender: {  }
       display_description: 'Shows a list of Varbase Herosliders, which are connected to the Varbase Heroslider entity queue'
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
