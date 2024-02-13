@@ -16,7 +16,6 @@ dependencies:
     - maxlength
     - media_library
     - media_library_edit
-    - scheduler_content_moderation_integration
 third_party_settings:
   field_group:
     group_slide_info:
@@ -100,12 +99,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  publish_state:
-    type: scheduler_moderation
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   simple_sitemap:
     weight: 10
     region: content
@@ -147,12 +140,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_state:
-    type: scheduler_moderation
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
     weight: 4
     region: content
@@ -162,5 +149,7 @@ hidden:
   path: true
   promote: true
   publish_on: true
+  publish_state: true
   sticky: true
   unpublish_on: true
+  unpublish_state: true

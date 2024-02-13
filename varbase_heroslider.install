@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the Varbase heroslider.
+ * Install, update and uninstall functions for the Varbase Hero Slider.
  */
 
 use Vardot\Entity\EntityDefinitionUpdateManager;

@@ -34,7 +34,7 @@ tips:
     label: 'Add The Slide to The Queue'
     weight: 3
     selector: '#edit-entityqueue-form-widget'
-    body: 'Then add the slide the "Varbase Heroslider" queue to push it to the queue directly.'
+    body: 'Then add the slide the "Hero Slider" queue to push it to the queue directly.'
     position: left
   preview-and-save:
     id: preview-and-save

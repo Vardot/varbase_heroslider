@@ -10,9 +10,9 @@ dependencies:
     - node
     - user
 id: varbase_heroslider
-label: 'Varbase Heroslider'
+label: 'Hero Slider'
 module: views
-description: 'Shows a list of Varbase Herosliders, which are connected to the Varbase Heroslider entity queue'
+description: 'Shows a list of Hero Slides, which are connected to the Hero Slider entity queue'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Varbase Heroslider'
+      title: 'Hero Slider'
       fields: {  }
       pager:
         type: some
@@ -58,7 +58,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<p> Varbase Heroslider </p>\r\n<p> There are no slides right now! </p>\r\n<a class=\"btn btn-primary hidden-anonymous visible-admin add-slider\" href=\"[site:url]/node/add/varbase_heroslider/\"> Add One Now </a>"
+            value: "<p> Hero Slider </p>\r\n<p> There are no slides right now! </p>\r\n<a class=\"btn btn-primary hidden-anonymous visible-admin add-slider\" href=\"[site:url]/node/add/varbase_heroslider/\"> Add One Now </a>"
             format: full_html
           tokenize: false
       sorts:
@@ -150,16 +150,16 @@ display:
         - views_data
   varbase_heroslider:
     id: varbase_heroslider
-    display_title: 'Varbase Heroslider'
+    display_title: 'Hero Slider'
     display_plugin: block
     position: 1
     display_options:
-      display_description: 'Shows a list of Varbase Herosliders, which are connected to the Varbase Heroslider entity queue'
+      display_description: 'Shows a list of Hero Slides, which are connected to the Hero Slider entity queue'
       display_extenders:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      block_description: 'Varbase Heroslider'
+      block_description: 'Hero Slider'
     cache_metadata:
       max-age: -1
       contexts:

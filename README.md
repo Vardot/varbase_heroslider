@@ -14,7 +14,7 @@ However, using it with Varbase distro and Vartheme or Bootstrap theme gives
 
 
 ### Features
-* A full-width responsive Varbase Heroslider.
+* A full-width responsive Hero Slider.
 * Easy to customize slides to act as a promotional feature typically
   displayed in the site's homepage.
 * Queued Herosliders.

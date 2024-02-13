@@ -1,6 +1,6 @@
 {
   "name": "varbase_heroslider",
-  "description": "Varbase  Heroslider",
+  "description": "Varbase  Hero Slider",
   "author": "Vardot",
   "license": "GPL-2.0",
   "homepage": "https://www.drupal.org/project/varbase_heroslider",
@@ -21,7 +21,7 @@
     "varbase",
     "Hero Slider",
     "Heroslider",
-    "Varbase Heroslider",
+    "Varbase Hero Slider",
     "frontend"
   ],
   "devDependencies": {

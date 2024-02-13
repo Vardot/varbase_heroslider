@@ -4,7 +4,7 @@ dependencies:
   module:
     - node
 id: varbase_heroslider
-label: 'Varbase Heroslider'
+label: 'Hero Slider'
 handler: simple
 handler_configuration: {  }
 entity_settings:
@@ -15,6 +15,7 @@ entity_settings:
       varbase_heroslider: varbase_heroslider
     sort:
       field: _none
+      direction: ASC
     auto_create: false
     auto_create_bundle: ''
 queue_settings:

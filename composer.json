@@ -1,6 +1,6 @@
 {
   "name": "drupal/varbase_heroslider",
-  "description": "Varbase Heroslider : This app will populate the universal implementation of a \"Hero Slider\" to be used on the homepage in most cases. A rich hero slider that allows you to display video and/or image slides.",
+  "description": "Varbase Hero Slider : This app will populate the universal implementation of a \"Hero Slider\" to be used on the homepage in most cases. A rich hero slider that allows you to display video and/or image slides.",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/varbase_heroslider",
   "license": "GPL-2.0-or-later",

@@ -1,4 +1,4 @@
-name: Varbase Heroslider
+name: Varbase Hero Slider
 description: 'This app will populate the universal implementation of a "Hero Slider" to be used on the homepage in most cases. A rich hero slider that allows you to display video and/or image slides.'
 type: module
 package: "Varbase"

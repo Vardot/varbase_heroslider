@@ -1,0 +1,11 @@
+uuid: 97dbcebc-ba06-4b29-aaaf-271b652c5401
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.varbase_heroslider
+id: node.varbase_heroslider
+target_entity_type_id: node
+target_bundle: varbase_heroslider
+default_langcode: site_default
+language_alterable: false
