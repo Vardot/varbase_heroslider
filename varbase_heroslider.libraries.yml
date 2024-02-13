@@ -1,18 +1,3 @@
-# Behaviors of Varbase Heroslider for local video scripts.
-local_video_slider:
-  js:
-    js/video.heroslider.local.js: {}
-
-# Behaviors of Varbase Heroslider for Youtube video scripts.
-youtube_video_slider:
-  js:
-    js/video.heroslider.youtube.js: { weight: -1 }
-
-# Behaviors of Varbase Heroslider for vimeo embeded videos scripts.
-vimeo_video_slider:
-  js:
-    js/video.heroslider.vimeo.js: { weight: -1 }
-
 # Oembed frame for Youtube video behaviors.
 oembed-frame-video-youtube:
   js:

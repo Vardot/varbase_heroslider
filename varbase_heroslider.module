@@ -12,10 +12,6 @@ use Drupal\media\Entity\Media;
  */
 function varbase_heroslider_theme($existing, $type, $theme, $path) {
   return [
-    'node__varbase_heroslider' => [
-      'template' => 'node--varbase-heroslide',
-      'base hook' => 'node',
-    ],
     'views_view__varbase_heroslider' => [
       'template' => 'views-view--varbase-heroslider',
       'base hook' => 'view',

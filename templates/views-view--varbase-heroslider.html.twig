@@ -1,37 +1,27 @@
 {#
 /**
  * @file
- * Varbase Varbase Heroslider implementation for the Varbase Heroslider view template.
+ * Default theme implementation to display a view of unformatted rows.
  *
  * Available variables:
- * - attributes: Remaining HTML attributes for the element.
- * - css_name: A CSS-safe version of the view name.
- * - css_class: The user-specified classes names, if any.
- * - rows: The results of the view query, if any.
- * - empty: The content to display if there are no rows.
- * - title: Title of the view, only used when displaying in the admin preview.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the view title.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the view title.
- * - dom_id: Unique id for every view being printed to give unique class for
- *   JavaScript.
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
  *
- * @see template_preprocess_views_view()
+ * @see template_preprocess_views_view_unformatted()
  *
  * @ingroup themeable
  */
 #}
 {%
-  include "varbase_components:media-hero-slider" with {
-    attributes: attributes,
-    css_name: css_name,
-    css_class: css_class,
-    rows: rows,
-    empty: empty,
-    title: title,
-    title_prefix: title_prefix,
-    title_suffix: title_suffix,
-    dom_id: dom_id
+  include "varbase_components:heroslider" with {
+    id: id,
+    controls: true,
+    indicators: true,
+    items: rows
   }
 %}
