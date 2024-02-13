@@ -8,8 +8,50 @@ dependencies:
     - node.type.varbase_heroslider
   module:
     - ds
-    - link
     - user
+    - varbase_buttons_block
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_card_hero
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+          settings:
+            card_border: 0
+            horizontal_alignment: start
+            vertical_alignment: end
+            utility_classes: ''
+            media_utility_classes: ''
+            content_utility_classes: ''
+    regions:
+      media:
+        - field_media_single
+      content:
+        - node_title
+        - field_brief
+        - field_link
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          link_target: ''
+          wrapper: h2
+          class: card-title
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 id: node.varbase_heroslider.default
 targetEntityType: node
 bundle: varbase_heroslider
@@ -20,26 +62,52 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_link:
-    type: link
+    type: varbase_bootstrap_button_link_formatter
     label: hidden
     settings:
+      color: btn-primary
+      size: btn-lg
       trim_length: 80
       url_only: false
       url_plain: false
       rel: '0'
-      target: '0'
+      target: 0
+      outline: 0
+      block_level: 0
+      disabled: 0
     third_party_settings:
       ds:
         ft:
-          id: default
+          id: expert
           settings:
             lb: ''
+            lbw: true
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
             lb-col: false
-            classes: {  }
-    weight: 2
+            ow: false
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fis-def-at: false
+            fi: true
+            fi-el: ''
+            fi-cl: mt-5
+            fi-at: ''
+            fi-def-at: false
+            prefix: ''
+            suffix: ''
+    weight: 3
     region: content
   field_media_single:
     type: entity_reference_entity_view
@@ -50,34 +118,11 @@ content:
     third_party_settings:
       ds:
         ft:
-          id: expert
+          id: reset
           settings:
             lb: ''
-            lbw: false
-            lbw-el: ''
-            lbw-cl: ''
-            lbw-at: ''
-            lb-col: false
-            ow: true
-            ow-el: ''
-            ow-cl: object-fit-media
-            ow-at: ''
-            ow-def-at: true
-            ow-def-cl: true
-            fis: true
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fis-def-at: true
-            fi: true
-            fi-el: ''
-            fi-cl: ''
-            fi-at: ''
-            fi-def-at: false
-            prefix: ''
-            suffix: ''
     weight: 0
-    region: content
+    region: media
 hidden:
   content_moderation_control: true
   langcode: true

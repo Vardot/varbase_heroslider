@@ -1,3 +1,4 @@
+uuid: a5fd9a59-7d39-4850-9c59-20b89d242962
 langcode: en
 status: false
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
     - node.type.varbase_heroslider
   module:
     - user
+_core:
+  default_config_hash: 6rFaOEklLu9ymlMn4K_5i8Jq0DbdMFDv1R6N1Vohlzg
 id: node.varbase_heroslider.teaser
 targetEntityType: node
 bundle: varbase_heroslider
@@ -23,3 +26,4 @@ hidden:
   field_link: true
   field_media_single: true
   langcode: true
+  search_api_excerpt: true

@@ -4,6 +4,7 @@ dependencies:
   module:
     - media
 id: media.varbase_heroslider
-label: "Varbase Heroslider"
+label: 'Varbase Heroslider'
+description: ''
 targetEntityType: media
 cache: true
