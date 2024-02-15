@@ -18,17 +18,11 @@
  * @ingroup themeable
  */
 #}
-{% if rows -%}
-  {%
-    include "varbase_components:heroslider" with {
-      id: id,
-      controls: true,
-      indicators: true,
-      items: rows[0]['#rows'] ?? []
-    }
-  %}
-{% elseif empty -%}
-  <div class="varbase-heroslider">
-    {{ empty }}
-  </div>
-{% endif %}
+{%
+  include "varbase_components:heroslider" with {
+    id: id,
+    controls: true,
+    indicators: true,
+    items: rows[0]['#rows'] ?? []
+  }
+%}
