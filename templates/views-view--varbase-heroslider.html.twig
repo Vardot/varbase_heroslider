@@ -11,17 +11,22 @@
  * - view: The view object.
  * - default_row_class: A flag indicating whether default classes should be
  *   used on rows.
+ * - empty: The content to display if there are no rows.
  *
  * @see template_preprocess_views_view_unformatted()
  *
  * @ingroup themeable
  */
 #}
-{%
-  include "varbase_components:heroslider" with {
-    id: id,
-    controls: true,
-    indicators: true,
-    items: rows[0]['#rows'] ?? []
-  }
-%}
+{% if rows -%}
+  {%
+    include "varbase_components:heroslider" with {
+      id: id,
+      controls: true,
+      indicators: true,
+      items: rows[0]['#rows'] ?? []
+    }
+  %}
+{% elseif empty -%}
+  {{ empty }}
+{% endif %}
