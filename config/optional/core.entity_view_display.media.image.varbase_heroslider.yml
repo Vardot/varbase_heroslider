@@ -65,7 +65,7 @@ content:
             lb-col: false
             ow: true
             ow-el: ''
-            ow-cl: 'vw-100 varbase-video-player ratio ratio-16x9'
+            ow-cl: 'vw-100 ratio ratio-16x9'
             ow-at: ''
             ow-def-at: true
             ow-def-cl: true
