@@ -24,6 +24,8 @@ third_party_settings:
           field_templates: default
           settings:
             card_border: 0
+            padded: 0
+            hero_style: overlay
             horizontal_alignment: start
             vertical_alignment: end
             utility_classes: bg-edge2edge

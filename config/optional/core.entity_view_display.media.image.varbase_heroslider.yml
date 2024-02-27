@@ -54,6 +54,7 @@ content:
       image_style: ''
     third_party_settings:
       ds:
+        ds_limit: ''
         ft:
           id: expert
           settings:
@@ -63,20 +64,20 @@ content:
             lbw-cl: ''
             lbw-at: ''
             lb-col: false
-            ow: true
+            ow: false
             ow-el: ''
-            ow-cl: 'vw-100 ratio ratio-16x9'
+            ow-cl: ''
             ow-at: ''
-            ow-def-at: true
-            ow-def-cl: true
+            ow-def-at: false
+            ow-def-cl: false
             fis: false
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fis-def-at: false
-            fi: false
+            fi: true
             fi-el: ''
-            fi-cl: ''
+            fi-cl: 'ratio ratio-16x9'
             fi-at: ''
             fi-def-at: false
             prefix: ''

@@ -37,7 +37,7 @@ display:
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
@@ -76,7 +76,40 @@ display:
             label: ''
             field_identifier: entityqueue_relationship
           exposed: false
-      arguments: {  }
+      arguments:
+        'null':
+          id: 'null'
+          table: views
+          field: 'null'
+          relationship: none
+          group_type: group
+          admin_label: 'Hero Style'
+          plugin_id: 'null'
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: 'Hero Style'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: overlay
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          must_not_be: false
       filters:
         status:
           id: status
@@ -142,6 +175,7 @@ display:
       max-age: -1
       contexts:
         - 'languages:language_interface'
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -160,10 +194,20 @@ display:
           metatags: {  }
           tokenize: false
       block_description: 'Hero Slider'
+      allow:
+        items_per_page: false
+        offset: '0'
+        pager: '0'
+        hide_fields: '0'
+        sort_fields: '0'
+        configure_filters: configure_filters
+        disable_filters: '0'
+        configure_sorts: '0'
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:

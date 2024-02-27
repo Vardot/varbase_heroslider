@@ -20,6 +20,7 @@
 #}
 {%
   include "varbase_components:heroslider" with {
+    hero_style: view.args[0] ?? 'overlay',
     id: id,
     controls: true,
     indicators: true,
