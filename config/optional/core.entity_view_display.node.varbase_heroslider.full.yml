@@ -25,7 +25,7 @@ third_party_settings:
           settings:
             card_border: 0
             padded: 0
-            hero_style: overlay
+            media_position: overlay
             horizontal_alignment: start
             vertical_alignment: end
             utility_classes: bg-edge2edge

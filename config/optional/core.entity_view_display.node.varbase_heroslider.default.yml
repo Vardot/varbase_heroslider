@@ -21,7 +21,7 @@ third_party_settings:
         pattern:
           field_templates: default
           settings:
-            hero_style: overlay
+            media_position: overlay
             card_border: 0
             padded: 0
             horizontal_alignment: start
