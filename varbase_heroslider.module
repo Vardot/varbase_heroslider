@@ -16,27 +16,7 @@ function varbase_heroslider_theme($existing, $type, $theme, $path) {
       'template' => 'views-view--varbase-heroslider',
       'base hook' => 'view',
     ],
-    'media_oembed_iframe__remote_video__varbase_heroslider' => [
-      'template' => 'media-oembed-iframe--remote-video--varbase-heroslider',
-      'variables' => [
-        'provider' => NULL,
-        'media' => NULL,
-      ],
-    ],
   ];
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function varbase_heroslider_preprocess_media_oembed_iframe__remote_video__varbase_heroslider(&$variables) {
-  // Send variables for the remote_video varbase heroslier oembed iframe.
-  $query = \Drupal::request()->query;
-  $variables['type'] = $query->get('type');
-  $variables['provider'] = $query->get('provider');
-  $variables['view_mode'] = $query->get('view_mode');
-  $variables['base_path'] = base_path();
-  $variables['varbase_heroslider_path'] = \Drupal::service('module_handler')->getModule('varbase_heroslider')->getPath();
 }
 
 /**

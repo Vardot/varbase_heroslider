@@ -1,9 +1,0 @@
-# Oembed frame for Youtube video behaviors.
-oembed-frame-video-youtube:
-  js:
-    js/oembed-frame.heroslider.youtube.js: {}
-
-# Oembed frame for Vimeo video behaviors.
-oembed-frame-video-vimeo:
-  js:
-    js/oembed-frame.heroslider.vimeo.js: {}
