@@ -6,12 +6,3 @@ core_version_requirement: ~10
 dependencies:
   - varbase_media:varbase_media
   - varbase_components:varbase_components
-install:
-  - link
-  - menu_ui
-  - entityqueue
-  - rabbit_hole
-  - field_group
-  - length_indicator
-  - advanced_text_formatter
-  - maxlength

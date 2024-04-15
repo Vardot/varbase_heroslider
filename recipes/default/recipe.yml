@@ -1,0 +1,72 @@
+name: Varbase Hero Slider - Default
+description: A recipe to manage default installed modules, configs and permissions.
+type: install
+install:
+  - link
+  - menu_ui
+  - entityqueue
+  - rabbit_hole
+  - field_group
+  - length_indicator
+  - advanced_text_formatter
+  - maxlength
+config:
+  import:
+    varbase_heroslider:
+      - node.type.varbase_heroslider
+      - field.storage.node.field_brief
+      - field.storage.node.field_link
+      - field.storage.node.field_media_single
+      - field.field.node.varbase_heroslider.field_brief
+      - field.field.node.varbase_heroslider.field_link
+      - field.field.node.varbase_heroslider.field_media_single
+      - core.entity_form_display.entity_subqueue.varbase_heroslider.default 
+      - core.entity_form_display.node.varbase_heroslider.default
+      - core.entity_view_mode.media.varbase_heroslider
+      - core.entity_view_display.media.image.varbase_heroslider
+      - core.entity_view_display.media.remote_video.varbase_heroslider
+      - core.entity_view_display.media.video.varbase_heroslider
+      - core.entity_view_display.node.varbase_heroslider.default
+      - core.entity_view_display.node.varbase_heroslider.full
+      - core.entity_view_display.node.varbase_heroslider.teaser
+      - core.base_field_override.node.varbase_heroslider.changed
+      - core.base_field_override.node.varbase_heroslider.created 
+      - core.base_field_override.node.varbase_heroslider.menu_link 
+      - core.base_field_override.node.varbase_heroslider.path
+      - core.base_field_override.node.varbase_heroslider.promote 
+      - core.base_field_override.node.varbase_heroslider.status 
+      - core.base_field_override.node.varbase_heroslider.sticky
+      - core.base_field_override.node.varbase_heroslider.title 
+      - core.base_field_override.node.varbase_heroslider.uid 
+      - entityqueue.entity_queue.varbase_heroslider
+      - rabbit_hole.behavior_settings.node.varbase_heroslider
+      - views.view.varbase_heroslider
+      - tour.tour.varbase-heroslider-creation
+  actions:
+    user.role.editor:
+      grantPermissions:
+        - 'create varbase_heroslider content'
+        - 'edit own varbase_heroslider content'
+        - 'delete own varbase_heroslider content'
+        - 'update varbase_heroslider entityqueue'
+        - 'view varbase_heroslider revisions'
+    user.role.content_admin:
+      grantPermissions:
+        - 'create varbase_heroslider content'
+        - 'edit own varbase_heroslider content'
+        - 'delete own varbase_heroslider content'
+        - 'edit any varbase_heroslider content'
+        - 'delete any varbase_heroslider content'
+        - 'update varbase_heroslider entityqueue'
+        - 'view varbase_heroslider revisions'
+        - 'revert varbase_heroslider revisions'
+    user.role.site_admin:
+      grantPermissions:
+        - 'create varbase_heroslider content'
+        - 'edit own varbase_heroslider content'
+        - 'delete own varbase_heroslider content'
+        - 'edit any varbase_heroslider content'
+        - 'delete any varbase_heroslider content'
+        - 'update varbase_heroslider entityqueue'
+        - 'view varbase_heroslider revisions'
+        - 'revert varbase_heroslider revisions'

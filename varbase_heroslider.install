@@ -6,21 +6,16 @@
  */
 
 use Vardot\Entity\EntityDefinitionUpdateManager;
-use Vardot\Installer\ModuleInstallerFactory;
-
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
 
 /**
  * Implements hook_install().
  */
 function varbase_heroslider_install() {
 
-  // Processor for install: in varbase_heroslider.info.yml file.
-  // --------------------------------------------------------------------------.
-  ModuleInstallerFactory::installList('varbase_heroslider');
-
-  // Install optional configs.
-  ModuleInstallerFactory::importConfigsFromScanedDirectory('varbase_heroslider', '/^field.storage.*\\.(yml)$/i');
-  ModuleInstallerFactory::importConfigsFromScanedDirectory('varbase_heroslider', '/^.*\\.(settings.yml)$/i');
+  $default_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/default');
+  RecipeRunner::processRecipe($default_recipe);
 
   // --------------------------------------------------------------------------.
   // Entity updates to clear up any mismatched entity and/or field definitions
