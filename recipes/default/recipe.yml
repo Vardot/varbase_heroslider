@@ -20,28 +20,7 @@ config:
       - field.field.node.varbase_heroslider.field_brief
       - field.field.node.varbase_heroslider.field_link
       - field.field.node.varbase_heroslider.field_media_single
-      - core.entity_form_display.entity_subqueue.varbase_heroslider.default 
-      - core.entity_form_display.node.varbase_heroslider.default
-      - core.entity_view_mode.media.varbase_heroslider
-      - core.entity_view_display.media.image.varbase_heroslider
-      - core.entity_view_display.media.remote_video.varbase_heroslider
-      - core.entity_view_display.media.video.varbase_heroslider
-      - core.entity_view_display.node.varbase_heroslider.default
-      - core.entity_view_display.node.varbase_heroslider.full
-      - core.entity_view_display.node.varbase_heroslider.teaser
-      - core.base_field_override.node.varbase_heroslider.changed
-      - core.base_field_override.node.varbase_heroslider.created 
-      - core.base_field_override.node.varbase_heroslider.menu_link 
-      - core.base_field_override.node.varbase_heroslider.path
-      - core.base_field_override.node.varbase_heroslider.promote 
-      - core.base_field_override.node.varbase_heroslider.status 
-      - core.base_field_override.node.varbase_heroslider.sticky
-      - core.base_field_override.node.varbase_heroslider.title 
-      - core.base_field_override.node.varbase_heroslider.uid 
-      - entityqueue.entity_queue.varbase_heroslider
-      - rabbit_hole.behavior_settings.node.varbase_heroslider
       - views.view.varbase_heroslider
-      - tour.tour.varbase-heroslider-creation
   actions:
     user.role.editor:
       grantPermissions:
