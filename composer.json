@@ -35,6 +35,6 @@
     "drupal/field_group": "~3",
     "drupal/length_indicator": "~1",
     "drupal/advanced_text_formatter": "~3",
-    "drupal/maxlength": "~2"
+    "drupal/maxlength": "~2 || ~3"
   }
 }
