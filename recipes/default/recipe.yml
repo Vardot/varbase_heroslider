@@ -13,7 +13,6 @@ install:
 config:
   import:
     varbase_heroslider:
-      - node.type.varbase_heroslider
       - field.storage.node.field_brief
       - field.storage.node.field_link
       - field.storage.node.field_media_single
