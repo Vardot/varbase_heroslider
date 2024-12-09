@@ -30,7 +30,7 @@
     "drupal/varbase_components": "~3 || 3.0.x-dev",
     "drupal/entityqueue": "~1",
     "drupal/rabbit_hole": "~2",
-    "drupal/field_group": "~3",
+    "drupal/field_group": "~4",
     "drupal/length_indicator": "~1",
     "drupal/advanced_text_formatter": "~3",
     "drupal/maxlength": "~3"
