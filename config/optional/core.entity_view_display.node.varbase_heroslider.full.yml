@@ -33,6 +33,14 @@ third_party_settings:
               source_id: checkbox
               source:
                 value: 0
+            padded:
+              source_id: checkbox
+              source:
+                value: 0
+            media_position:
+              source_id: select
+              source:
+                value: top
             horizontal_alignment:
               source_id: select
               source:
