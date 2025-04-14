@@ -73,7 +73,7 @@ third_party_settings:
               source_id: attributes
               source:
                 value: ''
-          slots: {  } 
+          slots: {  }
     regions:
       media:
         - field_media_single

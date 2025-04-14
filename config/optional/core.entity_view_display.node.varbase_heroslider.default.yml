@@ -8,8 +8,9 @@ dependencies:
     - node.type.varbase_heroslider
   module:
     - ds
+    - layout_builder
     - user
-    - varbase_buttons_block
+third_party_settings:
   ds:
     layout:
       id: 'ui_patterns:varbase_components:card_hero'
@@ -49,7 +50,7 @@ dependencies:
             card_hero_utility_classes:
               source_id: list_textarea
               source:
-                value: ''
+                value: bg-edge2edge
             card_hero_media_utility_classes:
               source_id: list_textarea
               source:
@@ -70,7 +71,7 @@ dependencies:
               source_id: attributes
               source:
                 value: ''
-          slots: {  }  
+          slots: {  }
     regions:
       media:
         - field_media_single
@@ -96,6 +97,9 @@ dependencies:
             lb: ''
             lb-col: false
             classes: {  }
+  layout_builder:
+    enabled: false
+    allow_custom: false
 id: node.varbase_heroslider.default
 targetEntityType: node
 bundle: varbase_heroslider
