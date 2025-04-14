@@ -61,7 +61,7 @@ third_party_settings:
               source_id: attributes
               source:
                 value: ''
-            card_hero_utility_classes: {'bg-edge2edge'}
+            card_hero_utility_classes: {  }
             card_hero_media_utility_classes: {  }
             card_hero_content_utility_classes: {  }
           slots: {  }      
