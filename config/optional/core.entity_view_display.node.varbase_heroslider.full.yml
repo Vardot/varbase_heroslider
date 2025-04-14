@@ -40,15 +40,27 @@ third_party_settings:
             media_position:
               source_id: select
               source:
-                value: top
+                value: overlay
             horizontal_alignment:
               source_id: select
               source:
-                value: 'start'
+                value: start
             vertical_alignment:
               source_id: select
               source:
-                value: 'end'
+                value: end
+            card_hero_utility_classes:
+              source_id: list_textarea
+              source:
+                value: bg-edge2edge
+            card_hero_media_utility_classes:
+              source_id: list_textarea
+              source:
+                value: ''
+            card_hero_content_utility_classes:
+              source_id: list_textarea
+              source:
+                value: ''
             card_attributes:
               source_id: attributes
               source:
@@ -61,10 +73,7 @@ third_party_settings:
               source_id: attributes
               source:
                 value: ''
-            card_hero_utility_classes: {  }
-            card_hero_media_utility_classes: {  }
-            card_hero_content_utility_classes: {  }
-          slots: {  }      
+          slots: {  } 
     regions:
       media:
         - field_media_single
