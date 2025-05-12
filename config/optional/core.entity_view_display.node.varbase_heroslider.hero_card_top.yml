@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.hero_card_top
     - field.field.node.varbase_heroslider.field_brief
     - field.field.node.varbase_heroslider.field_link
     - field.field.node.varbase_heroslider.field_media_single
@@ -41,15 +42,15 @@ third_party_settings:
             media_position:
               source_id: select
               source:
-                value: overlay
+                value: top
             horizontal_alignment:
               source_id: select
               source:
-                value: start
+                value: center
             vertical_alignment:
               source_id: select
               source:
-                value: end
+                value: center
             card_hero_utility_classes:
               source_id: list_textarea
               source:
@@ -101,10 +102,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.varbase_heroslider.default
+id: node.varbase_heroslider.hero_card_top
 targetEntityType: node
 bundle: varbase_heroslider
-mode: default
+mode: hero_card_top
 content:
   field_brief:
     type: ui_patterns_component_per_item

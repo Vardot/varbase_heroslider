@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.hero_card_overlay
+label: 'Hero card - media overlay'
+description: ''
+targetEntityType: node
+cache: true

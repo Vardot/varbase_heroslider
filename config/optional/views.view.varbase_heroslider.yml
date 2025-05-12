@@ -2,13 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.hero_card
+    - core.entity_view_mode.node.hero_card_overlay
     - entityqueue.entity_queue.varbase_heroslider
     - node.type.varbase_heroslider
   module:
     - entityqueue
     - node
+    - ui_patterns
+    - ui_patterns_views
     - user
+    - varbase_components
 id: varbase_heroslider
 label: 'Hero Slider'
 module: views
@@ -76,40 +79,7 @@ display:
             label: ''
             field_identifier: entityqueue_relationship
           exposed: false
-      arguments:
-        'null':
-          id: 'null'
-          table: views
-          field: 'null'
-          relationship: none
-          group_type: group
-          admin_label: 'Media position'
-          plugin_id: 'null'
-          default_action: default
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: true
-          title: 'Media position'
-          default_argument_type: fixed
-          default_argument_options:
-            argument: overlay
-          summary_options:
-            base_path: ''
-            count: true
-            override: false
-            items_per_page: 25
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          must_not_be: false
+      arguments: {  }
       filters:
         status:
           id: status
@@ -137,16 +107,86 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       style:
-        type: default
+        type: ui_patterns
         options:
-          row_class: ''
-          default_row_class: false
           uses_fields: false
+          ui_patterns:
+            ui_patterns:
+              component_id: 'varbase_components:views-view-heroslider'
+              variant_id: null
+              props:
+                attributes:
+                  source_id: attributes
+                  source:
+                    value: ''
+                id:
+                  source_id: textfield
+                  source:
+                    value: varbase-heroslider-homepage
+                controls:
+                  source_id: checkbox
+                  source:
+                    value: true
+                indicators:
+                  source_id: checkbox
+                  source:
+                    value: true
+                controls_indicators_position:
+                  source_id: select
+                  source:
+                    value: overlay
+                interval:
+                  source_id: number
+                  source:
+                    value: '6000'
+                keyboard:
+                  source_id: checkbox
+                  source:
+                    value: true
+                pause:
+                  source_id: select
+                  source:
+                    value: hover
+                ride:
+                  source_id: select
+                  source:
+                    value: carousel
+                touch:
+                  source_id: checkbox
+                  source:
+                    value: true
+                wrap:
+                  source_id: checkbox
+                  source:
+                    value: true
+                heroslider_utility_classes:
+                  source_id: list_textarea
+                  source:
+                    value: ''
+                heroslider_indicators_utility_classes:
+                  source_id: list_textarea
+                  source:
+                    value: ''
+                controls_attributes:
+                  source_id: attributes
+                  source:
+                    value: ''
+                indicators_attributes:
+                  source_id: attributes
+                  source:
+                    value: ''
+                heroslider_controls_utility_classes: {  }
+              slots:
+                rows:
+                  sources:
+                    -
+                      source_id: view_rows
+                      _weight: '0'
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: hero_card
+          view_mode: hero_card_overlay
       query:
         type: views_query
         options:
@@ -175,25 +215,25 @@ display:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:entityqueue.entity_queue.varbase_heroslider'
-        - entity_field_info
-        - views_data
-  varbase_heroslider:
-    id: varbase_heroslider
-    display_title: 'Hero Slider'
+  heroslider_block:
+    id: heroslider_block
+    display_title: 'Hero Slider block'
     display_plugin: block
     position: 1
     display_options:
+      title: 'Hero Slider'
+      defaults:
+        title: false
       display_description: 'Shows a list of Hero Slides, which are connected to the Hero Slider entity queue'
       display_extenders:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      block_description: 'Hero Slider'
+      block_description: 'Hero Slider block'
       allow:
         items_per_page: false
         offset: '0'
@@ -207,10 +247,7 @@ display:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:entityqueue.entity_queue.varbase_heroslider'
-        - entity_field_info
-        - views_data

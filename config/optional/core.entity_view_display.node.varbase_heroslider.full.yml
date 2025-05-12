@@ -10,7 +10,10 @@ dependencies:
   module:
     - ds
     - layout_builder
+    - ui_patterns
+    - ui_patterns_field_formatters
     - user
+    - varbase_components
 third_party_settings:
   ds:
     layout:
@@ -93,11 +96,9 @@ third_party_settings:
           wrapper: h2
           class: card-title
         ft:
-          id: default
+          id: reset
           settings:
             lb: ''
-            lb-col: false
-            classes: {  }
   layout_builder:
     enabled: false
     allow_custom: false
@@ -107,55 +108,95 @@ bundle: varbase_heroslider
 mode: full
 content:
   field_brief:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_link:
-    type: varbase_bootstrap_button_link_formatter
+    type: ui_patterns_component_per_item
     label: hidden
     settings:
-      color: btn-primary
-      size: btn-lg
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: 0
-      outline: 0
-      block_level: 0
-      disabled: 0
+      ui_patterns:
+        component_id: 'varbase_components:text'
+        variant_id: null
+        props:
+          attributes:
+            source_id: attributes
+            source:
+              value: ''
+          text_utility_classes:
+            source_id: list_textarea
+            source:
+              value: ''
+          content:
+            source_id: 'field_property:node:field_brief:value'
+        slots: {  }
     third_party_settings:
       ds:
         ft:
-          id: expert
+          id: reset
           settings:
             lb: ''
-            lbw: true
-            lbw-el: ''
-            lbw-cl: ''
-            lbw-at: ''
-            lb-col: false
-            ow: false
-            ow-el: ''
-            ow-cl: ''
-            ow-at: ''
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fis-def-at: false
-            fi: true
-            fi-el: ''
-            fi-cl: mt-5
-            fi-at: ''
-            fi-def-at: false
-            prefix: ''
-            suffix: ''
+    weight: 2
+    region: content
+  field_link:
+    type: ui_patterns_component_per_item
+    label: hidden
+    settings:
+      ui_patterns:
+        component_id: 'varbase_components:button'
+        variant_id: null
+        props:
+          attributes:
+            source_id: attributes
+            source:
+              value: 'aria-label="Call for action link" target="_parent"'
+          html_tag:
+            source_id: select
+            source:
+              value: a
+          url:
+            source_id: entity_field
+            source:
+              derivable_context: 'field:node:varbase_heroslider:field_link'
+              'field:node:varbase_heroslider:field_link':
+                value:
+                  source_id: 'field_property:node:field_link:uri'
+          color:
+            source_id: select
+            source:
+              value: primary
+          outline:
+            source_id: checkbox
+            source:
+              value: false
+          size:
+            source_id: select
+            source:
+              value: btn-lg
+          disabled:
+            source_id: checkbox
+            source:
+              value: false
+          button_utility_classes:
+            source_id: list_textarea
+            source:
+              value: mt-5
+        slots:
+          content:
+            sources:
+              -
+                source_id: entity_field
+                source:
+                  derivable_context: 'field:node:varbase_heroslider:field_link'
+                  'field:node:varbase_heroslider:field_link':
+                    value:
+                      sources:
+                        -
+                          source_id: 'field_property:node:field_link:title'
+                          _weight: '0'
+                _weight: '0'
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
     weight: 3
     region: content
   field_media_single:

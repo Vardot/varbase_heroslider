@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.hero_card_top
+label: 'Hero card - media top'
+description: ''
+targetEntityType: node
+cache: true

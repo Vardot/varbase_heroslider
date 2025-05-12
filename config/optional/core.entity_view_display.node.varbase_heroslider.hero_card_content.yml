@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.hero_card_content
     - field.field.node.varbase_heroslider.field_brief
     - field.field.node.varbase_heroslider.field_link
     - field.field.node.varbase_heroslider.field_media_single
@@ -45,11 +46,11 @@ third_party_settings:
             horizontal_alignment:
               source_id: select
               source:
-                value: start
+                value: center
             vertical_alignment:
               source_id: select
               source:
-                value: end
+                value: center
             card_hero_utility_classes:
               source_id: list_textarea
               source:
@@ -76,8 +77,6 @@ third_party_settings:
                 value: ''
           slots: {  }
     regions:
-      media:
-        - field_media_single
       content:
         - node_title
         - field_brief
@@ -85,7 +84,7 @@ third_party_settings:
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 0
         label: hidden
         formatter: default
         settings:
@@ -101,10 +100,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.varbase_heroslider.default
+id: node.varbase_heroslider.hero_card_content
 targetEntityType: node
 bundle: varbase_heroslider
-mode: default
+mode: hero_card_content
 content:
   field_brief:
     type: ui_patterns_component_per_item
@@ -131,7 +130,7 @@ content:
           id: reset
           settings:
             lb: ''
-    weight: 2
+    weight: 1
     region: content
   field_link:
     type: ui_patterns_component_per_item
@@ -196,24 +195,11 @@ content:
           id: reset
           settings:
             lb: ''
-    weight: 3
+    weight: 2
     region: content
-  field_media_single:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: varbase_heroslider
-      link: false
-    third_party_settings:
-      ds:
-        ft:
-          id: reset
-          settings:
-            lb: ''
-    weight: 0
-    region: media
 hidden:
   content_moderation_control: true
+  field_media_single: true
   langcode: true
   links: true
   search_api_excerpt: true

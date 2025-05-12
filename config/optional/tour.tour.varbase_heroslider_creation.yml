@@ -1,11 +1,8 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - varbase_heroslider
+dependencies: {  }
 id: varbase_heroslider_creation
 label: 'Varbase Heroslider Creation'
-module: varbase_heroslider
 routes:
   -
     route_name: node.add
