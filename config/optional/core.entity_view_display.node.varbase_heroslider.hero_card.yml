@@ -145,7 +145,7 @@ content:
           attributes:
             source_id: attributes
             source:
-              value: 'aria-label="Call for action link" target="_parent"'
+              value: 'aria-label="[node:field_link:title] about [node:title]" target="_parent"'
           html_tag:
             source_id: select
             source:
