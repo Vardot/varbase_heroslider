@@ -4,7 +4,6 @@
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/varbase_heroslider",
   "license": "GPL-2.0-or-later",
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Vardot",
@@ -16,12 +15,6 @@
     "issues": "http://drupal.org/project/issues/varbase_heroslider",
     "source": "http://cgit.drupalcode.org/varbase_heroslider",
     "slack" : "http://slack.varbase.vardot.com"
-  },
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
   },
   "require": {
     "drupal/core": "~11.2.0",
