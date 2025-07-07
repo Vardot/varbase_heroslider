@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - varbase_heroslider
 third_party_settings:
   menu_ui:
     available_menus: {  }
