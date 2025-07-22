@@ -19,7 +19,7 @@
  */
 #}
 {%
-  include "varbase_components:heroslider" with {
+  include active_theme ~ ":heroslider" with {
     media_position: view.args[0] ?? 'overlay',
     id: id,
     controls: true,

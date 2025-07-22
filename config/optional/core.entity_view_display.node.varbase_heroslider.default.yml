@@ -12,18 +12,17 @@ dependencies:
     - ui_patterns
     - ui_patterns_field_formatters
     - user
-    - varbase_components
 third_party_settings:
   ds:
     layout:
-      id: 'ui_patterns:varbase_components:card_hero'
+      id: 'ui_patterns:vartheme_bs5:card_hero'
       library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
         ui_patterns:
-          component_id: 'varbase_components:card-hero'
+          component_id: 'vartheme_bs5:card-hero'
           variant_id: null
           props:
             attributes:
@@ -111,7 +110,7 @@ content:
     label: hidden
     settings:
       ui_patterns:
-        component_id: 'varbase_components:text'
+        component_id: 'vartheme_bs5:text'
         variant_id: null
         props:
           attributes:
@@ -138,7 +137,7 @@ content:
     label: hidden
     settings:
       ui_patterns:
-        component_id: 'varbase_components:button'
+        component_id: 'vartheme_bs5:button'
         variant_id: null
         props:
           attributes:

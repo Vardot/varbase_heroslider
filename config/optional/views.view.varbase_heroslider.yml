@@ -11,7 +11,6 @@ dependencies:
     - ui_patterns
     - ui_patterns_views
     - user
-    - varbase_components
 id: varbase_heroslider
 label: 'Hero Slider'
 module: views
@@ -112,7 +111,7 @@ display:
           uses_fields: false
           ui_patterns:
             ui_patterns:
-              component_id: 'varbase_components:views-view-heroslider'
+              component_id: 'vartheme_bs5:views-view-heroslider'
               variant_id: null
               props:
                 attributes:
