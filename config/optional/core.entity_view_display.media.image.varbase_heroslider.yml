@@ -17,6 +17,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         classes:
           layout_class: {  }
         wrappers:
@@ -25,7 +26,6 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        label: ''
     regions:
       ds_content:
         - field_media_image
@@ -48,13 +48,12 @@ content:
         attachment: null
         size: null
       image_loading:
-        attribute: lazy
+        attribute: eager
       iwc:
         image_style: null
       image_style: ''
     third_party_settings:
       ds:
-        ds_limit: ''
         ft:
           id: expert
           settings:
