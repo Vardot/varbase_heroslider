@@ -13,6 +13,11 @@ install:
 config:
   import:
     varbase_heroslider:
+      - node.type.varbase_heroslider
+      - entityqueue.entity_queue.varbase_heroslider
+      - field.storage.node.field_brief
+      - field.storage.node.field_link
+      - field.storage.node.field_media_single
       - field.field.node.varbase_heroslider.field_brief
       - field.field.node.varbase_heroslider.field_link
       - field.field.node.varbase_heroslider.field_media_single

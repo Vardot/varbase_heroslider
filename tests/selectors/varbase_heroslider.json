@@ -1,0 +1,17 @@
+{
+  "css": {
+    "drupal page heading": "h1",
+    "drupal status messages": ".messages--status",
+    "drupal error messages": ".messages--error",
+    "drupal access denied heading": "h1:has-text('Access denied')",
+    "admin content view": ".view-content",
+    "hero slider content type row": "tr:has-text('Hero Slider')",
+    "content type list": ".views-table, table",
+    "node add hero slider link": "a[href*='/node/add/varbase_heroslider']",
+    "node title field": "#edit-title-0-value",
+    "node brief field": "#edit-field-brief-0-value",
+    "entityqueue admin list": ".view-entityqueue-list, .admin-list, table",
+    "save button": "#edit-submit"
+  },
+  "xpath": {}
+}

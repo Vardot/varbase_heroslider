@@ -1,0 +1,6 @@
+name: 'Varbase Hero Slider Test'
+description: 'Provisions a site for the Varbase Hero Slider automated browser tests: installs Varbase Media (the media stack) and then Varbase Hero Slider. It does NOT apply the shipped Varbase Hero Slider - Default recipe directly here; the module hook_install applies it. The default recipe grants Hero Slider permissions to the Varbase editorial roles (editor, content_admin, site_admin) that only exist on a full Varbase profile, not on the Standard test profile - the tests/varbase_heroslider_test_roles helper recipe creates them first. The login, administration-pages and add-content scenarios only need Varbase Hero Slider enabled; the Webmaster super-admin (uid 1) reaches every route.'
+type: 'Testing'
+install:
+  - varbase_media
+  - varbase_heroslider

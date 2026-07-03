@@ -13,6 +13,7 @@ use Drupal\media\Entity\Media;
 function varbase_heroslider_preprocess_node__varbase_heroslider(&$variables) {
 
   $node = $variables['elements']['#node'];
+  $media = [];
   if ($node->hasField('field_media_single')) {
     $media = $node->get('field_media_single')->getValue();
   }

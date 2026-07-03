@@ -11,7 +11,7 @@ third_party_settings:
 name: 'Hero slider'
 type: varbase_heroslider
 description: 'A rich hero slider that allows you to display video and/or image slides.'
-help: ''
+help: 'Add a Hero Slider slide with a title, a short brief, a link and a single media item (image or video) to build the homepage hero slider.'
 new_revision: true
 preview_mode: 1
 display_submitted: false
