@@ -15,12 +15,21 @@
 module.exports = {
   default: {
     timeout: 120000,
+    // Retry once. The suite drives a single heavy Varbase site and creates
+    // content through the browser; a late scenario can occasionally trip a
+    // step timeout purely from cumulative load (media upload + AJAX) rather
+    // than a real defect. One retry absorbs those transient timeouts. Override
+    // per run with --retry N.
+    retry: 1,
     requireModule: ['tsx/cjs'],
     require: [
       'node_modules/webship-js/tests/step-definitions/**/*.js',
       'tests/step-definitions/**/*.js',
     ],
-    paths: ['tests/features/drupal/**/*.feature'],
+    // FEATURES lets a single feature be targeted (e.g.
+    // FEATURES="tests/features/drupal/03-01-01-varbase-heroslider-create-slide.feature");
+    // unset runs the whole Drupal suite.
+    paths: [process.env.FEATURES || 'tests/features/drupal/**/*.feature'],
     format: [
       '@cucumber/pretty-formatter',
       'json:tests/reports/cucumber_report.json',
@@ -30,11 +39,23 @@ module.exports = {
       // Test users. The Webmaster row is the `drush site:install` super-admin
       // created with `--account-name=webmaster --account-pass=...`.
       users: {
+        // The Webmaster row is the `drush site:install` super-admin created
+        // with `--account-name=webmaster --account-pass=...`.
         'Webmaster': {
           username: 'webmaster',
           email: 'webmaster@example.test',
           password: 'dD.123123ddd',
           isAdmin: true,
+        },
+        // The Editor row is a member of the Varbase `editor` role. The default
+        // recipe grants that role the "create varbase_heroslider content" and
+        // "update varbase_heroslider entityqueue" permissions. On a full
+        // Varbase site the profile seeds this account; the webship-js-test CI
+        // job creates it after installing the module (see .gitlab-ci.yml).
+        'Editor': {
+          username: 'Editor',
+          email: 'test.editor@vardot.com',
+          password: 'dD.123123ddd',
         },
       },
       minWaitTime: {

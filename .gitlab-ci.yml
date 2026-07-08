@@ -151,7 +151,7 @@ webship-js-test:
     # the Standard test profile they must exist first, otherwise the recipes'
     # grantPermissions on those roles fail.
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT recipe
-        $CI_PROJECT_DIR/tests/varbase_heroslider_test_roles -y
+        $CI_PROJECT_DIR/tests/recipes/varbase_heroslider_test_roles -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
     # Provision Varbase Media first (its hook_install imports media types, entity
     # browsers and views in the correct order and applies its own default
@@ -178,6 +178,44 @@ webship-js-test:
     # the editorial roles created above. The Webmaster super-admin reaches every
     # route, so no extra grants are needed for the scenarios.
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT pm:install varbase_heroslider -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # Complete the Hero Slider content type on the Standard test profile.
+    #
+    # The module ships its default form and view displays in config/optional.
+    # Those displays declare a config dependency on the Varbase Simple
+    # content-moderation workflow (workflows.workflow.varbase_simple_workflow),
+    # which on a full Varbase site is provided by the profile but does NOT exist
+    # on the Drupal Standard profile. Core also imports a module's config/optional
+    # during installDefaultConfig - before the module's hook_install recipe
+    # creates the Hero Slider field instances - so on Standard those displays are
+    # skipped as having unmet dependencies and the Hero Slider fields end up
+    # hidden on the add form and node view (only the Title shows).
+    #
+    # Recreate the missing workflow (moderating the Hero Slider type) via the
+    # tests/varbase_heroslider_test_workflow helper recipe, then re-run the
+    # optional configuration import: with the workflow present and the field
+    # instances already created, the default form display (media library widget,
+    # moderation state) and the view displays (brief + media) now apply - so the
+    # site matches a real Varbase install and the scenarios exercise the real
+    # widgets and rendering.
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT recipe
+        $CI_PROJECT_DIR/tests/recipes/varbase_heroslider_test_workflow -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT php:eval '\Drupal::service("config.installer")->installOptionalConfig();'
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # Create the "Editor" test account used by the create-slide and access
+    # scenarios. It is a member of the `editor` role, which the default recipe
+    # grants "create varbase_heroslider content" and "update varbase_heroslider
+    # entityqueue". On a full Varbase site the profile seeds this account; on
+    # the Standard test profile it must be created after the roles exist. The
+    # credentials mirror cucumber.js worldParameters.users.Editor.
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT user:create "Editor" --mail="test.editor@vardot.com" --password="dD.123123ddd" -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT user:role:add "editor" "Editor" -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # Create deterministic Hero Slider content (image media + two slides) via the
+    # varbase_heroslider_test_content testing recipe, then the browser scenarios
+    # only verify it. This avoids driving the flaky Media library upload dialog.
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT recipe $CI_PROJECT_DIR/tests/recipes/varbase_heroslider_test_content -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
     - !reference [.fragments, node_playwright]
   script:

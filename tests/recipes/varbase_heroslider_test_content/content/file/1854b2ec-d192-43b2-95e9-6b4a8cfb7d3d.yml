@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 1854b2ec-d192-43b2-95e9-6b4a8cfb7d3d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: hero-test-image.png
+  uri:
+    -
+      value: 'public://hero-test/hero-test-image.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 87
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1783500610

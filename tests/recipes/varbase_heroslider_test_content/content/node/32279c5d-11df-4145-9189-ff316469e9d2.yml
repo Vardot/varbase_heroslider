@@ -1,0 +1,48 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 32279c5d-11df-4145-9189-ff316469e9d2
+  bundle: varbase_heroslider
+  default_langcode: en
+  depends:
+    d80db361-3e15-43d5-89ce-a8f330948600: media
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Queued Hero Slider Slide'
+  created:
+    -
+      value: 1783500610
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /hero-queue-test
+      langcode: und
+  field_brief:
+    -
+      value: 'This slide is pushed to the Hero Slider entity queue.'
+  field_link:
+    -
+      uri: 'https://www.vardot.com'
+      title: 'Learn more about Varbase'
+      options: {  }
+  field_media_single:
+    -
+      entity: d80db361-3e15-43d5-89ce-a8f330948600

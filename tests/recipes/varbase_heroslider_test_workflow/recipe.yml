@@ -1,0 +1,27 @@
+name: 'Varbase Hero Slider Test Workflow'
+description: 'Creates the Varbase Simple content-moderation workflow (varbase_simple_workflow) and puts the Hero Slider content type under it. On a full Varbase site this workflow is provided by the Varbase profile; the Hero Slider default form and view displays (shipped in the module config/optional) declare a config dependency on it, so on the Drupal Standard test profile the workflow must exist before those optional displays can be imported. Apply this recipe after the Varbase Hero Slider module is installed, then re-run the optional configuration import so the complete Hero Slider add form (media library widget, moderation state) and its view displays apply.'
+type: 'Testing'
+install:
+  - content_moderation
+config:
+  actions:
+    # Grant the Varbase Simple workflow transition permissions to the editorial
+    # roles so they can create, publish and archive Hero Slider slides. On a
+    # full Varbase site the Varbase Workflow module grants these; the workflow
+    # created here otherwise moderates the Hero Slider type with no role able to
+    # transition it, so editors could not save a slide.
+    user.role.editor:
+      grantPermissions:
+        - 'use varbase_simple_workflow transition create_new_draft'
+        - 'use varbase_simple_workflow transition publish'
+        - 'use varbase_simple_workflow transition archive'
+    user.role.content_admin:
+      grantPermissions:
+        - 'use varbase_simple_workflow transition create_new_draft'
+        - 'use varbase_simple_workflow transition publish'
+        - 'use varbase_simple_workflow transition archive'
+    user.role.site_admin:
+      grantPermissions:
+        - 'use varbase_simple_workflow transition create_new_draft'
+        - 'use varbase_simple_workflow transition publish'
+        - 'use varbase_simple_workflow transition archive'

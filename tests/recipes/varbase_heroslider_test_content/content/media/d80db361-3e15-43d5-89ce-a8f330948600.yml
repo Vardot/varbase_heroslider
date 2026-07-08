@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: d80db361-3e15-43d5-89ce-a8f330948600
+  bundle: image
+  default_langcode: en
+  depends:
+    016a9e19-8f3e-49fc-80dc-96e5fce39e7b: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Hero Slider Test Image'
+  created:
+    -
+      value: 1783500610
+  path:
+    -
+      alias: ''
+      langcode: en
+  field_media_image:
+    -
+      entity: 016a9e19-8f3e-49fc-80dc-96e5fce39e7b
+      alt: 'Hero Slider automated test image'
+      title: ''
+      width: 16
+      height: 16
+  field_media_in_library:
+    -
+      value: true

@@ -1,0 +1,3 @@
+name: 'Varbase Hero Slider Test Content'
+description: 'Creates deterministic Hero Slider demo content (an image media and two Hero Slider slides, one pushed to the Hero Slider entity queue) for the automated functional tests. Replaces seeding content by driving the media library upload dialog through the browser.'
+type: 'Testing'
