@@ -1,7 +1,14 @@
 name: Varbase Hero Slider - Default
-description: A recipe to manage default installed modules, configs and permissions.
+description: A recipe to install the Varbase Hero Slider content type, its fields, displays, view and editorial permissions, and every module it needs. The varbase_heroslider module itself declares no dependencies and installs nothing; this recipe owns the whole install.
 type: install
 install:
+  # Core / base modules the Hero Slider config relies on.
+  - node
+  - user
+  - path
+  - file
+  - media
+  # Contrib modules the content type, fields and displays depend on.
   - link
   - menu_ui
   - entityqueue
@@ -10,18 +17,21 @@ install:
   - length_indicator
   - advanced_text_formatter
   - maxlength
+  - content_moderation
+  - inline_entity_form
+  - entity_browser_entity_form
+  - media_library
+  - media_library_edit
+  - ds
+  - layout_builder
+  - ui_patterns
+  - ui_patterns_field_formatters
+  - ui_patterns_views
+  - drimage_improved
+  # Varbase stack that provides the media types and Hero Slider components.
+  - varbase_media
+  - varbase_components
 config:
-  import:
-    varbase_heroslider:
-      - node.type.varbase_heroslider
-      - entityqueue.entity_queue.varbase_heroslider
-      - field.storage.node.field_brief
-      - field.storage.node.field_link
-      - field.storage.node.field_media_single
-      - field.field.node.varbase_heroslider.field_brief
-      - field.field.node.varbase_heroslider.field_link
-      - field.field.node.varbase_heroslider.field_media_single
-      - views.view.varbase_heroslider
   actions:
     user.role.editor:
       grantPermissions:
