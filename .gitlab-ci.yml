@@ -233,6 +233,14 @@ webship-js-test:
 # Allow the Varbase stack Composer plugins in the CI build (allow-plugins lives
 # in varbase_project, not modules).
 composer:
+  # Pin the core version at the JOB level. The drupalci composer job carries a
+  # job-level default (DRUPAL_CORE: $CORE_STABLE) that overrides the global
+  # variables block, so the target core must be re-declared here for the
+  # composer job to build against Drupal ~11.4 (required by varbase_components
+  # ~3.1). Without this the job resolves the latest stable 11.3.x and fails.
+  variables:
+    DRUPAL_CORE: "11.4.0"
+    IGNORE_PROJECT_DRUPAL_CORE_VERSION: "1"
   before_script:
     - composer config --no-plugins allow-plugins.symfony/runtime true || true
     - composer config --no-plugins allow-plugins.composer/installers true || true
