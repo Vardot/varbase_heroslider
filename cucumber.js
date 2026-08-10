@@ -1,11 +1,11 @@
-// Cucumber-js config for the Varbase Hero Slider webship-js suite.
+// Cucumber-js config for the Varbase Hero Slider varbase-e2e suite.
 //
 // Runs the Drupal Standard profile feature set (Olivero front end, Claro
 // admin theme) under tests/features/drupal/.
 //
 //   npx cucumber-js --config cucumber.js
 //
-// Reusable step definitions ship with webship-js; the module-specific steps
+// Reusable step definitions ship with varbase-e2e; the module-specific steps
 // live in tests/step-definitions/varbase_heroslider.steps.js. Every
 // worldParameter (users, selectors, screenshot, video, javascript,
 // minWaitTime, launchUrl) is inlined below - this single file is the whole
@@ -23,7 +23,7 @@ module.exports = {
     retry: 1,
     requireModule: ['tsx/cjs'],
     require: [
-      'node_modules/webship-js/tests/step-definitions/**/*.js',
+      'node_modules/@vardot/varbase-e2e/tests/step-definitions/**/*.js',
       'tests/step-definitions/**/*.js',
     ],
     // FEATURES lets a single feature be targeted (e.g.
@@ -50,7 +50,7 @@ module.exports = {
         // The Editor row is a member of the Varbase `editor` role. The default
         // recipe grants that role the "create varbase_heroslider content" and
         // "update varbase_heroslider entityqueue" permissions. On a full
-        // Varbase site the profile seeds this account; the webship-js-test CI
+        // Varbase site the profile seeds this account; the varbase-e2e-test CI
         // job creates it after installing the module (see .gitlab-ci.yml).
         'Editor': {
           username: 'Editor',
@@ -96,13 +96,13 @@ module.exports = {
         infoTypes: '',
       },
       video: {
-        mode: process.env.WEBSHIP_VIDEO || 'on-failure',
+        mode: process.env.VARBASE_E2E_VIDEO || 'on-failure',
         dir: './tests/videos',
         size: { width: 1920, height: 1080 },
         filenamePattern: '{datetime}.{feature_file}.{scenario}.{status}.{ext}',
       },
       javascript: {
-        mode: process.env.WEBSHIP_JS_ERROR_MODE || 'warn',
+        mode: process.env.VARBASE_E2E_JS_ERROR_MODE || 'warn',
         levels: ['error'],
         ignore: '',
         beforeScenario: false,

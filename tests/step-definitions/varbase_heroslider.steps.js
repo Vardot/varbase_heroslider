@@ -4,7 +4,7 @@
  * @file
  * Custom step definitions for the Varbase Hero Slider test suite.
  *
- * Most of the suite reuses the step definitions that ship with webship-js
+ * Most of the suite reuses the step definitions that ship with varbase-e2e
  * (navigation, form input, web-first assertions). Only the module-specific
  * helpers live here:
  *   - Logging in as a named user from cucumber.js worldParameters.users.
@@ -28,12 +28,12 @@ const {
   gotoUrl,
   smartSettle,
   waitForPageLoad,
-} = require('webship-js/tests/step-definitions/webship');
+} = require('@vardot/varbase-e2e/tests/step-definitions/varbase-e2e');
 
-// webship-js sets a 45s per-step default timeout. This suite drives a single
+// varbase-e2e sets a 45s per-step default timeout. This suite drives a single
 // heavy Varbase site and re-authenticates per scenario; a late login or media
 // upload can legitimately need longer under cumulative load. Raise the budget
-// (this file loads after webship-js, so the later call wins) so a slow-but-fine
+// (this file loads after varbase-e2e, so the later call wins) so a slow-but-fine
 // step is not cut off. Real hangs still surface via the per-await timeouts.
 setDefaultTimeout(90 * 1000);
 
@@ -55,51 +55,6 @@ async function attempt(body, message) {
 }
 
 /**
- * Log in as a named test user defined in cucumber.js worldParameters.users.
- *
- * Example: Given I am a logged in user with the "Webmaster" user
- * Example: Given I am a logged in user with the "Editor" user
- */
-Given(/^I am a logged in user with( the)*( username)* "([^"]*)?"( user)?$/, async function (theCase, usernameCase, key, userCase) {
-  const users = this.parameters.users || {};
-  if (!(key in users)) {
-    throw new Error(`No user named "${key}" in cucumber.js worldParameters.users`);
-  }
-  const { username, password } = users[key];
-  if (!username || !password) {
-    throw new Error(`User "${key}" is missing username or password in worldParameters.users`);
-  }
-  await attempt(async () => {
-    let loggedIn = false;
-    // Up to two attempts, each submitting the login form ONCE and then polling
-    // (without resubmitting) for Drupal's `body.user-logged-in` class, which
-    // every authenticated page carries. A single submit with a long verify
-    // window rides out a slow post-login redirect on a busy site, and - unlike
-    // a rapid resubmit loop - never trips a site's form-flood protection
-    // (for example the Honeypot time limit on a full Varbase profile).
-    for (let i = 0; i < 2 && !loggedIn; i++) {
-      await this.context.clearCookies();
-      await gotoUrl(this.page, `${this.parameters.launchUrl}/user/login`);
-      await this.page.waitForSelector('#edit-name', { state: 'visible', timeout: 15000 });
-      await this.page.locator('#edit-name').fill(username);
-      await this.page.locator('#edit-pass').fill(password);
-      await this.page.locator('#user-login-form input[value="Log in"], input[value="Log in"]').first().click();
-      await this.page.waitForSelector('body.user-logged-in', { timeout: 35000 }).catch(() => {});
-      loggedIn = (await this.page.locator('body.user-logged-in').count()) > 0;
-      // If a form-flood guard asked us to wait, back off before the retry so
-      // the second submit is not rejected as well.
-      if (!loggedIn && (await this.page.getByText(/please wait .* and try again/i).count()) > 0) {
-        await this.page.waitForTimeout(8000);
-      }
-    }
-    if (!loggedIn) {
-      throw new Error(`Login did not establish a session for "${key}"`);
-    }
-    await waitForPageLoad(this.page, this.minWaitTime && this.minWaitTime.page);
-  }, `Could not log in as "${key}"`);
-});
-
-/**
  * Drop back to an anonymous session by clearing every cookie.
  *
  * Example: Given I am an anonymous visitor
@@ -113,7 +68,7 @@ Given(/^(?:I |we )?am an anonymous visitor$/, async function () {
 /**
  * Open an administration page and assert it is reachable.
  *
- * Uses the webship-js smart-wait helpers (gotoUrl + waitForPageLoad) so heavy
+ * Uses the varbase-e2e smart-wait helpers (gotoUrl + waitForPageLoad) so heavy
  * Varbase admin pages are fully settled before the assertion, and reports any
  * access-denied / not-found / fatal-error page with a tester-friendly message.
  *
