@@ -304,27 +304,3 @@ Then(/^(?:I |we )*the Hero Slider slide should render its media image$/, async f
   }, 'The Hero Slider slide did not render its media image');
 });
 
-/**
- * Assert the current request was denied.
- *
- * Accepts either a 403 "Access denied" page or a redirect to the user login
- * form, so it holds whether the site serves the default access-denied page or
- * routes 403s to the login page. Asserts the visible access outcome rather
- * than mere page reachability.
- *
- * Example: Then I should be denied access
- */
-Then(/^(?:I |we )*should be denied access$/, async function () {
-  await attempt(async () => {
-    await waitForPageLoad(this.page, (this.minWaitTime && this.minWaitTime.page) || 8000);
-    const deniedHeading = await this.page.locator('h1:has-text("Access denied")').count();
-    const loginForm = await this.page.locator('#user-login-form').count();
-    const onLogin = /\/user\/login/.test(this.page.url());
-    const bodyText = (await this.page.locator('body').innerText().catch(() => '')).toLowerCase();
-    const deniedText = bodyText.includes('access denied') || bodyText.includes('you are not authorized');
-    assert.ok(
-      deniedHeading > 0 || loginForm > 0 || onLogin || deniedText,
-      'Expected an access-denied page or a redirect to the login form'
-    );
-  }, 'The request was not denied as expected');
-});
