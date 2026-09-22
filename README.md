@@ -21,8 +21,8 @@ However, using it with Varbase distro and Vartheme or Bootstrap theme gives
 
 
 ### Join Our Slack Team for Feedback and Support
-[![](https://www.drupal.org/files/varbase-slack-cta_0.png)](http://slack.varbase.vardot.com)
-Join now: http://slack.varbase.vardot.com/
+[![](https://www.drupal.org/files/varbase-slack-cta_0.png)](https://varbase.slack.com)
+Join now: https://varbase.slack.com
 
 
 This module is sponsored and developed by Vardot.
