@@ -6,8 +6,8 @@
   "homepage": "https://www.drupal.org/project/varbase_heroslider",
   "private": true,
   "engines": {
-    "yarn": ">= 4.9.3",
-    "node": ">= 20.0"
+    "yarn": ">= 4.18.1",
+    "node": ">= 24.0"
   },
   "scripts": {
     "phpcs": "phpcs --standard=./.phpcs.xml .",
@@ -21,10 +21,10 @@
     "generate-reports": "generate-reports"
   },
   "dependencies": {
-    "@cucumber/cucumber": "10.0.1",
-    "@cucumber/pretty-formatter": "1.0.0",
-    "playwright": "1.60.0",
-    "tsx": "4.22.1",
+    "@cucumber/cucumber": "^10.0.1",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "playwright": "^1.60.0",
+    "tsx": "^4.22.1",
     "@vardot/varbase-e2e": "^2.0.7"
   },
   "resolutions": {
@@ -50,14 +50,14 @@
     "eslint-plugin-jquery": "^1.5.1",
     "eslint-plugin-prettier": "^5.4.0",
     "eslint-plugin-yml": "^1.18.0",
-    "glob": "11.0.0",
+    "glob": "^11.0.0",
     "jsdom": "^26.1.0",
     "loadjs": "^4.3.0",
     "prettier": "^3.5.3",
     "tabbable": "^6.2.0",
     "terser": "^5.39.0",
     "terser-webpack-plugin": "^5.3.14",
-    "underscore": "~1.13.7",
+    "underscore": "^1.13.7",
     "webpack": "^5.99.8",
     "webpack-cli": "^6.0.1"
   },
@@ -72,5 +72,5 @@
     "last 1 Samsung version",
     "Firefox ESR"
   ],
-  "packageManager": "yarn@4.9.3"
+  "packageManager": "yarn@4.18.1"
 }
